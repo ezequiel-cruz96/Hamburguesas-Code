@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import {BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
+import NavBar from './components/NavBar.js'
+import HomePage from'./Paginas/HomeContainer'
+import ItemListContainer from './containers/ItemListContainer';
+import ItemDetailContainer from './containers/ItemDetailContainer'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <BrowserRouter>
+      <NavBar/>
+      <h1>Bienvenidos a Burger Code</h1>
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer/>
+          </Route>
+
+          <Route exact path="/category/:id">
+          <ItemListContainer/>
+          </Route>
+          <Route exact path="/item/:id">
+          <ItemDetailContainer/>
+          </Route>
+
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
