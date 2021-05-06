@@ -1,5 +1,6 @@
 import React , {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
+import './ItemDetail.css';
 
 
 function ItemDetail(){
@@ -20,7 +21,7 @@ function ItemDetail(){
         <div>
 
             <div className="card" >
-                <img className="imagen" src={detalle.Img} alt="Hamburguesas" />
+                <img className="imagen" src={detalle.Img} alt="Hamburguesas" className="carta2__imagen--tamaño"/>
                     <div className="card-body">
                         <div className="card-text">
                             <p>Producto: {detalle.Producto}</p>

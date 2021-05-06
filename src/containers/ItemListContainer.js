@@ -14,6 +14,21 @@ function ItemListContainer() {
         
     }, [])
 
+    console.log(productos);
+
+    //Filtrado de Hamburguesas
+    const Hamburguesas= productos.filter((el)=>
+    el.Categoria==="Hamburguesa"
+    )
+    console.log(Hamburguesas);
+
+    //Filtrado de papas
+    const Papas= productos.filter((el)=>
+    el.Categoria==="Papas"
+    )
+    console.log(Papas);
+
+
     return(
         <div>
             <ItemList ItemProductos={productos}/>

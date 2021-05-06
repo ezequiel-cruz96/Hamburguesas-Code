@@ -11,10 +11,12 @@ function App() {
       <BrowserRouter>
       <NavBar/>
       <h1>Bienvenidos a Burger Code</h1>
+      <h2>En la sección Catálogo encontras nuestros productos</h2>
         <Switch>
-          <Route exact path="/">
-            <ItemListContainer/>
+        <Route exact path="/Catalogo">
+          <ItemListContainer/>
           </Route>
+          
           <Route exact path="/category/:id">
           <ItemListContainer/>
           </Route>

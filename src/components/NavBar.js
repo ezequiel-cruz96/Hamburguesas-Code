@@ -16,7 +16,7 @@ function NavBar() {
                 <div className="barraNavegacion__items">
                     <div className="barraNavegacion__item"><Link to={'/Inicio'} className="estilosLink">Inicio</Link></div>
                     <div className="barraNavegacion__item"><Link to={'/Quienés somos'} className="estilosLink">¿Quienés somos?</Link></div>
-                    <div className="barraNavegacion__item"><Link to={'/Catalogo'} className="estilosLink">Catalogo</Link></div>
+                    <div className="barraNavegacion__item"><Link to={'/Catalogo'} className="estilosLink">Catálogo</Link></div>
                     <div className="barraNavegacion__item"><Link to={'/Contacto'} className="estilosLink">Contacto</Link></div>
                     <div className="barraNavegacion__item"><Link to={'/carrito'}> <Carrito/> </Link></div>
 

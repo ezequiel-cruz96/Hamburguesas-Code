@@ -1,5 +1,7 @@
 import React from 'react'
 import './Item.css';
+import {Link} from  'react-router-dom';
+
 
 export default function Item ({items}){
 
@@ -16,6 +18,9 @@ export default function Item ({items}){
                         <h6 class="card-subtitle mb-2 text-muted">{items.Producto}</h6>
                         <p className="card-text"> Descripción:{items.Descripcion}</p>
                         <p>Precio:{items.Precio}</p>
+                        <Link to={`/item/${items.id}`}>
+                        <button type="button" className="btn btn-primary">Ver detalle</button>
+                        </Link>
                     </div>
                 </div>
             </div>
