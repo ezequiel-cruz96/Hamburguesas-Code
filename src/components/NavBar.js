@@ -14,11 +14,12 @@ function NavBar() {
             </div>
             <div>
                 <div className="barraNavegacion__items">
-                    <div><a href="App.js" className="barraNavegacion__item">Inicio</a></div>
-                    <div><a href="App.js" className="barraNavegacion__item">Componentes</a></div>
-                    <div><a href="App.js" className="barraNavegacion__item">Comprar</a></div>
-                    <div><a href="App.js" className="barraNavegacion__item">Ayuda</a></div>
-                    <Carrito/>
+                    <div className="barraNavegacion__item"><Link to={'/Inicio'} className="estilosLink">Inicio</Link></div>
+                    <div className="barraNavegacion__item"><Link to={'/Quienés somos'} className="estilosLink">¿Quienés somos?</Link></div>
+                    <div className="barraNavegacion__item"><Link to={'/Catalogo'} className="estilosLink">Catalogo</Link></div>
+                    <div className="barraNavegacion__item"><Link to={'/Contacto'} className="estilosLink">Contacto</Link></div>
+                    <div className="barraNavegacion__item"><Link to={'/carrito'}> <Carrito/> </Link></div>
+
                 </div>
             </div>
         </div>

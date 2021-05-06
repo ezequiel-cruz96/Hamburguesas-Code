@@ -1,9 +1,8 @@
 import {BrowserRouter,Switch,Route } from 'react-router-dom';
 import './App.css';
-import NavBar from './components/NavBar.js'
-import HomePage from'./Paginas/HomeContainer'
+import NavBar from './components/NavBar.js';
 import ItemListContainer from './containers/ItemListContainer';
-import ItemDetailContainer from './containers/ItemDetailContainer'
+import ItemDetailContainer from './containers/ItemDetailContainer';
 
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
           <Route exact path="/">
             <ItemListContainer/>
           </Route>
-
           <Route exact path="/category/:id">
           <ItemListContainer/>
           </Route>
