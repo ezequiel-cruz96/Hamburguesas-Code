@@ -8,9 +8,6 @@ function ItemDetail(){
     const [detalle, setDetalle] = useState([]);
     const{id}= useParams();
     
-    
-    
-
     useEffect(() => {
         fetch(`https://my-json-server.typicode.com/ezequiel-cruz96/Api-Rest--Base-de-datos--Hamburguesas/Hamburguesas/${id}`)
         .then((response) => response.json())

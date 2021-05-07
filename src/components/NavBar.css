@@ -21,20 +21,27 @@
     align-items: flex-end;
     background-color: black;
     text-decoration: none;
-
 }
 .barraNavegacion__item{
     font-size: 22px;
     text-decoration: none;
     color: white;
-
 }
 .barraNavegacion__item:hover{
     background-color: orange;
     border-radius: 5px;
-
 }
 .estilosLink{
     text-decoration: none;
     color: white;
+}
+.barraNavegacion__item--drop{
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+}
+.barraNavegacion__item--drop:hover{
+    background-color: orange;
+    border-radius: 5px;
+
 }

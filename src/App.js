@@ -13,13 +13,14 @@ function App() {
       <h1>Bienvenidos a Burger Code</h1>
       <h2>En la sección Catálogo encontras nuestros productos</h2>
         <Switch>
-        <Route exact path="/Catalogo">
+        
+          <Route exact path="/catalogo/:categoria">
+          <ItemListContainer/>
+          </Route>
+          <Route exact path="/catalogo">
           <ItemListContainer/>
           </Route>
           
-          <Route exact path="/category/:id">
-          <ItemListContainer/>
-          </Route>
           <Route exact path="/item/:id">
           <ItemDetailContainer/>
           </Route>
