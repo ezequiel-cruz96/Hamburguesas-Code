@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import ItemList from '../components/ItemList';
 import {useParams} from 'react-router-dom';
-import {BrowserRouter,Switch,Route } from 'react-router-dom';
 import ItemDetail from "../components/ItemDetail";
 
 
 
 function ItemListContainer() {
 
+    
+   const{categoria}= useParams();
+ 
     const [productos, setProductos] = useState([]);
 
-    const{categoria}= useParams();
-
-    console.log(categoria)
 
     useEffect(() => {
         setTimeout(() => {
@@ -22,9 +21,9 @@ function ItemListContainer() {
         }, 0);
         
     }, [])
-    
 
     //Filtrado de Hamburguesas
+
     const Hamburguesas= productos.filter((el)=>
     el.Categoria==="Hamburguesa"
     )
@@ -36,12 +35,30 @@ function ItemListContainer() {
     )
 
     return(
-       <div>
-            <ItemDetail ItemProductos={productos}/>
 
-       </div>
-      
-    
+        <div>
+
+        <div>{ 
+                categoria ==="Papas"? (
+                <ItemList ItemProductos={Papas}/>
+            ):("")
+                }
+        </div>
+        <div>{ 
+                categoria ==="Hamburguesas"? (
+                <ItemList ItemProductos={Hamburguesas}/>
+            ):("")
+                }
+        </div>
+        <div>{ 
+                categoria === undefined ? (
+                <ItemList ItemProductos={productos}/>
+            ):("")
+                }
+        </div>
+
+        </div>
+       
     )
 
     }

@@ -23,7 +23,7 @@ function NavBar() {
                         <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <Link to={'/Catalogo'} className="dropdown-item">Lista de productos</Link>
                             <Link to={'/Catalogo/Hamburguesas'} className="dropdown-item">Hamburguesas</Link>
-                            <Link to={'Catalogo/Papas'} className="dropdown-item">Papas</Link>
+                            <Link to={'/Catalogo/Papas'} className="dropdown-item">Papas</Link>
                         </div>
                     </div>
                     <div className="barraNavegacion__item"><Link to={'/Contacto'} className="estilosLink">Contacto</Link></div>
