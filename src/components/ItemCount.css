@@ -1,0 +1,47 @@
+.item__titulo{
+    display: grid;
+    width: 150px;
+    justify-items: center;
+    margin-left: 50px;
+    margin-top: 50px;
+    font-size: 20px;
+    color: gray;
+}
+.item__estructura{
+    display: grid;
+    width: 150px;
+    grid-template-columns: 50px 50px 50px;
+    justify-items: center;
+    border: solid gray 1px;
+    margin-left: 50px;
+    margin-top: 20px;
+    font-size: 20px;
+
+    
+}
+.sumar{
+    color:  rgb(0, 140, 255);
+    border: white;
+    font-size: 20px;
+    background-color: white;
+}
+.restar{
+    color:  rgb(0, 140, 255);
+    border: white;
+    font-size: 20px;
+
+    background-color: white;
+}
+.item__titulo--añadirCarrito{
+    width: 150px;
+    font-size: 15px;
+    margin-top: 5px;
+    margin-left: 50px;
+    text-align:center;
+    color: rgb(0, 140, 255);
+    border: solid rgb(0, 140, 255) 1px;
+}
+.stock{
+    font-size: 10px;
+    color: grey;
+}

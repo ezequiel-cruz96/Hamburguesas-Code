@@ -1,12 +1,21 @@
 import React , {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import './ItemDetail.css';
+import ItemCount from  './ItemCount';
 
 
 function ItemDetail(){
     
     const [detalle, setDetalle] = useState([]);
     const{id}= useParams();
+    
+
+    let [Onadd, setOnadd] = useState();
+
+    console.log(Onadd);
+
+    
+    
     
     useEffect(() => {
         fetch(`https://my-json-server.typicode.com/ezequiel-cruz96/Api-Rest--Base-de-datos--Hamburguesas/Hamburguesas/${id}`)
@@ -24,7 +33,7 @@ function ItemDetail(){
                             <p>Producto: {detalle.Producto}</p>
                             <p>Descripcion: {detalle.Descripcion}</p>
                             <p>Precio: {detalle.Precio}</p>
-                            <button type="button" className="btn btn-primary">Comprar</button>
+                           <ItemCount stock={5} inicial={0} item={detalle.Producto} Onadd={Onadd}/> 
                         </div>
                     </div>
             </div>
