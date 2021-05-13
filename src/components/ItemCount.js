@@ -11,13 +11,16 @@ export default function ItemCount ({stock,inicial,Onadd,id,item,Descripcion,Prec
 
     let {addItem} = useContext(AppContext);
 
-    let {cart} = useContext(AppContext);
+    const {cart, setCartItem} = useContext(AppContext)
+
 
     let [count, setCount] = useState(inicial);
 
+
     Onadd=count;
 
-    let infoProducto=[id,item,Descripcion,Precio*count]
+    let infoProducto={id,item,Descripcion,Precio}
+    
 
     function onClick(){
         addItem(infoProducto,count)
