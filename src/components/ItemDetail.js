@@ -28,7 +28,7 @@ function ItemDetail(){
                             <p>Producto: {detalle.Producto}</p>
                             <p>Descripcion: {detalle.Descripcion}</p>
                             <p>Precio: {detalle.Precio}</p>
-                           <ItemCount stock={5} inicial={0} id ={detalle.id}item={detalle.Producto} Onadd={Onadd} Descripcion={detalle.Descripcion} Precio={detalle.Precio}/> 
+                           <ItemCount stock={5} inicial={0} id ={detalle.id} Producto={detalle.Producto} Onadd={Onadd} Descripcion={detalle.Descripcion} Precio={detalle.Precio}/> 
                         </div>
                     </div>
             </div>

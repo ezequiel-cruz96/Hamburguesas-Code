@@ -10,30 +10,34 @@ export default function AppContextProvider({children}){
   const [cart, setCart] = useState([])
   
 
+    function addItem(id,item,Descripcion,Precio,quantity) {
 
-    function addItem(item,quantity) {
+      let PrecioMax=Precio*quantity;
 
-    let estado=EstadoCarrito(item.id);
+      let estado= EstadoCarrito(id)
 
       if(quantity>0){
 
-                item.Cantidad=quantity;
+                setCart([{id,item,Descripcion,PrecioMax,quantity}])
 
-                cart.push(item)
-                
                 console.log(cart);
 
-                console.log("Cantidad de productos comprados "+quantity);
+                console.log("Cantidad de productos comprados: "+quantity);
                 
       }
       if(estado){
 
-        cart.shift(item)
+        let Newcart=[{
+          id:id,
+          item:item,
+          Descripcion: Descripcion,
+          PrecioMax: PrecioMax,
+          quantity: quantity}]
 
-        item.Cantidad=quantity;
-
+          setCart([...Newcart])
       }
-      
+     
+    
     }
 
     //Me devuelve true si hay algo en el carrito
@@ -42,9 +46,8 @@ export default function AppContextProvider({children}){
         return cart.some(item => item.id === id)
       }
 
-   
-   
-  
+
+
 
     
     

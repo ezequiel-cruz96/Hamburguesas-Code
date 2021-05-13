@@ -6,24 +6,21 @@ import {AppContext} from '../context/CartContext';
 
 
 
-export default function ItemCount ({stock,inicial,Onadd,id,item,Descripcion,Precio}){ 
+export default function ItemCount ({stock,inicial,Onadd,id,Producto,Descripcion,Precio}){ 
 
 
     let {addItem} = useContext(AppContext);
 
-    const {cart, setCartItem} = useContext(AppContext)
 
 
     let [count, setCount] = useState(inicial);
 
 
     Onadd=count;
-
-    let infoProducto={id,item,Descripcion,Precio}
-    
+   
 
     function onClick(){
-        addItem(infoProducto,count)
+        addItem(id,Producto,Descripcion,Precio,count)
     }
 
     
@@ -43,7 +40,7 @@ export default function ItemCount ({stock,inicial,Onadd,id,item,Descripcion,Prec
     return(
         <div>
 
-            <div className="item__titulo">{item}</div>
+            <div className="item__titulo">{Producto}</div>
             <div className="item__estructura">
             
                 <div>
