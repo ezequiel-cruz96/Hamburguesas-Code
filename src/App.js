@@ -3,11 +3,12 @@ import './App.css';
 import NavBar from './components/NavBar.js';
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
-
+import AppContextProvider from './context/CartContext';
 
 function App() {
   return (
     <div>
+      <AppContextProvider>
       <BrowserRouter>
       <NavBar/>
       <h1>Bienvenidos a Burger Code</h1>
@@ -27,6 +28,9 @@ function App() {
 
         </Switch>
       </BrowserRouter>
+
+      </AppContextProvider>
+      
     </div>
   );
 }

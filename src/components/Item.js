@@ -21,6 +21,7 @@ export default function Item ({items}){
                         <Link to={`/item/${items.id}`}>
                         <button type="button" className="btn btn-primary">Ver detalle</button>
                         </Link>
+                        
                     </div>
                 </div>
             </div>

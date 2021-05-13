@@ -1,18 +1,28 @@
-import React, {useState} from 'react';
+import React, { useState, useContext } from 'react';
 import './ItemCount.css';
 import { Link} from 'react-router-dom';
+import {AppContext} from '../context/CartContext';
 
 
 
 
-export default function ItemCount ({stock,inicial,item,Onadd}){ 
+export default function ItemCount ({stock,inicial,Onadd,id,item,Descripcion,Precio}){ 
 
 
+    let {addItem} = useContext(AppContext);
+
+    let {cart} = useContext(AppContext);
 
     let [count, setCount] = useState(inicial);
 
-
     Onadd=count;
+
+    let infoProducto=[id,item,Descripcion,Precio*count]
+
+    function onClick(){
+        addItem(infoProducto,count)
+    }
+
     
     function onAdd() {
         if (count > stock)
@@ -58,8 +68,8 @@ export default function ItemCount ({stock,inicial,item,Onadd}){
                 { 
                 (Onadd>0)&&(Onadd<=stock)? (
                     
-                    (<Link to= '/catalogo'>
-                    <button className="item__titulo--añadirCarrito"> Terminar mi compra</button>
+                    (<Link to= '/cart'>
+                    <button className="item__titulo--añadirCarrito" >  Terminar mi compra</button>
                 </Link>) 
                     
                 )
@@ -68,7 +78,8 @@ export default function ItemCount ({stock,inicial,item,Onadd}){
                 </div>
                 
                 <div>
-                <button type="button" className="btn btn-primary">Comprar</button>
+                <button type="button" className="btn btn-primary" onClick= {onClick}>Comprar</button>
+                                                                
 
                 </div>
 
