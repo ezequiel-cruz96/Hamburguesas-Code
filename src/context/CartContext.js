@@ -12,32 +12,28 @@ export default function AppContextProvider({children}){
 
     function addItem(id,item,Descripcion,Precio,quantity) {
 
-      let PrecioMax=Precio*quantity;
+      let estado= EstadoCarrito(id);
 
-      let estado= EstadoCarrito(id)
-
-      if(quantity>0){
-
-                setCart([{id,item,Descripcion,PrecioMax,quantity}])
-
-                console.log(cart);
-
-                console.log("Cantidad de productos comprados: "+quantity);
-                
-      }
       if(estado){
-
-        let Newcart=[{
-          id:id,
-          item:item,
-          Descripcion: Descripcion,
-          PrecioMax: PrecioMax,
-          quantity: quantity}]
-
-          setCart([...Newcart])
-      }
-     
+      
+        let newCart= cart.map((el)=>{
     
+        if(el.id===id){
+          
+          el.quantity=quantity;
+          el.PrecioTotal= Precio*quantity;
+        }
+        return el
+      }
+
+    )
+    return  setCart([...newCart])
+        
+      } else{
+        setCart([...cart, {id,item,Descripcion,Precio,quantity}])
+
+      }
+
     }
 
     //Me devuelve true si hay algo en el carrito
@@ -56,7 +52,7 @@ export default function AppContextProvider({children}){
 
   return(
     <AppContext.Provider value={
-        {addItem,EstadoCarrito}
+        {addItem,EstadoCarrito,cart}
     }
     >
     
