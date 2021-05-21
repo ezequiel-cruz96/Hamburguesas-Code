@@ -13,8 +13,6 @@ export default function ItemCount ({stock,inicial,Onadd,id,Producto,Descripcion,
 
     const {cart}  = useContext(AppContext);
 
-
-
     let [count, setCount] = useState(inicial);
 
 
@@ -25,14 +23,7 @@ export default function ItemCount ({stock,inicial,Onadd,id,Producto,Descripcion,
         addItem(id,Producto,Descripcion,Precio,count)
     }
 
-   
-    cart.forEach(element => {
-        console.log(element);
-        console.log(count);
-    });
-   
 
-    
     function onAdd() {
         if (count > stock)
         return; 

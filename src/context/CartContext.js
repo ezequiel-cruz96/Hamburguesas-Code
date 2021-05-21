@@ -19,9 +19,11 @@ export default function AppContextProvider({children}){
         let newCart= cart.map((el)=>{
     
         if(el.id===id){
-          
-          el.quantity=quantity;
-          el.PrecioTotal= Precio*quantity;
+          return{
+            ...el,
+            quantity,
+            PrecioTotal: Precio*quantity
+          }
         }
         return el
       }
@@ -29,9 +31,8 @@ export default function AppContextProvider({children}){
     )
     return  setCart([...newCart])
         
-      } else{
-        setCart([...cart, {id,item,Descripcion,Precio,quantity}])
-
+      }else{
+        setCart([...cart, {id,item,Descripcion,Precio,quantity,PrecioTotal:Precio*quantity}])
       }
 
     }
