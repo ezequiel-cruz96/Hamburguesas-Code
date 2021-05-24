@@ -27,7 +27,7 @@ function NavBar() {
                         </div>
                     </div>
                     <div className="barraNavegacion__item"><Link to={'/Contacto'} className="estilosLink">Contacto</Link></div>
-                    <div className="barraNavegacion__item"><Link to={'/carrito'}> <Carrito/> </Link></div>
+                    <div className="barraNavegacion__item"><Link to={'/cart'}> <Carrito/> </Link></div>
                 </div>
             </div>
         </div>

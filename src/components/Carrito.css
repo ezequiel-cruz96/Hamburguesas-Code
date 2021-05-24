@@ -3,3 +3,16 @@
     height: 30px;
     color: orangered;
 }
+.numeroCarrito{
+    orientation: absolute;
+    color: white;
+    text-decoration: none;
+   
+}
+.contenedor{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+
+
+}

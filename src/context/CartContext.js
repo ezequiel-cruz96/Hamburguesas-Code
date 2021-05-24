@@ -8,10 +8,11 @@ export default function AppContextProvider({children}){
 
 
   const [cart, setCart] = useState([])
+
   
-
-    function addItem(id,item,Descripcion,Precio,quantity) {
-
+    //Guardar productos en el carrito
+    function addItem(id,item,Descripcion,Precio,quantity,Imagen) {
+      
       let estado= EstadoCarrito(id);
 
       if(estado){
@@ -32,7 +33,7 @@ export default function AppContextProvider({children}){
     return  setCart([...newCart])
         
       }else{
-        setCart([...cart, {id,item,Descripcion,Precio,quantity,PrecioTotal:Precio*quantity}])
+        setCart([...cart, {id,item,Descripcion,Precio,quantity,PrecioTotal:Precio*quantity,Imagen}])
       }
 
     }
@@ -43,17 +44,29 @@ export default function AppContextProvider({children}){
         return cart.some(item => item.id === id)
       }
 
+      function EstadoCarrito2 (id) {
+        return id.some(item => item.id === item.id)
+      }
 
+      //Limpiar carrito
 
+      function CleanCart(){
+        setCart([])
+      }
 
-    
-    
-  
- 
+      //Eliminar Item del carrito
+
+      function EliminarItem(id){
+        let CartNuevo= cart.filter((el)=>
+        el.id!==id
+        )
+        return(setCart(CartNuevo))
+      }
+
 
   return(
     <AppContext.Provider value={
-        {addItem,EstadoCarrito,cart}
+        {addItem,EstadoCarrito,cart,CleanCart,EstadoCarrito2,EliminarItem}
     }
     >
     
