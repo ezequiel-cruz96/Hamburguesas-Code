@@ -60,7 +60,7 @@ export default function AppContextProvider({children}){
         let CartNuevo= cart.filter((el)=>
         el.id!==id
         )
-        return(setCart(CartNuevo))
+        setCart(CartNuevo)
       }
 
 
