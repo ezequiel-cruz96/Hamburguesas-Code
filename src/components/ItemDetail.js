@@ -2,7 +2,8 @@ import React , {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom';
 import './ItemDetail.css';
 import ItemCount from  './ItemCount';
-import { Context} from '../context/CartContext.js'
+import { Context} from '../context/CartContext.js';
+import db from '../firebase/index';
 
 
 function ItemDetail(){
@@ -12,10 +13,20 @@ function ItemDetail(){
 
     let [Onadd, setOnadd] = useState();
   
-    useEffect(() => {
-        fetch(`https://my-json-server.typicode.com/ezequiel-cruz96/Api-Rest--Base-de-datos--Hamburguesas/Hamburguesas/${id}`)
-        .then((response) => response.json())
-        .then((data) => setDetalle(data));   
+        useEffect(()=>{
+
+            function getProduct(id){
+    
+                const productoCollection = db.collection('Productos').doc(id)
+                
+                productoCollection
+                .get()
+                .then(doc =>{
+                    const producto =doc.data()
+                    setDetalle({id : doc.id, ...producto})
+                })
+            }
+            getProduct(id)
         },[])
 
     return(

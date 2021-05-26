@@ -1,35 +1,54 @@
 import React, { useState, useEffect } from "react";
 import ItemList from '../components/ItemList';
 import {useParams} from 'react-router-dom';
+import getProducts from '../service/getProducts';
+import db from '../firebase/index';
 
 
 
 function ItemListContainer() {
 
-    
-   const{categoria}= useParams();
- 
-    const [productos, setProductos] = useState([]);
+    const{categoria}= useParams();
 
+    const [productosFirebase, setProductosFirebase] = useState([]);
 
-    useEffect(() => {
-        setTimeout(() => {
-            fetch('https://my-json-server.typicode.com/ezequiel-cruz96/Api-Rest--Base-de-datos--Hamburguesas/Hamburguesas')
-                .then((response) => response.json())
-                .then((data) => setProductos(data));
-        }, 0);
+    useEffect(()=>{
+
+        function getProducts(){
+
+            const productosCollection = db.collection('Productos')
+
+            let Productos=[]
         
-    }, [])
+            productosCollection
+            .get()
+            .then(snapshot =>{
+                Productos = snapshot.docs.map(doc =>{
+        
+                    let producto= doc.data() /* Aca esta la info */
+                    return{
+                        id: doc.id,
+                        ...producto 
+                    }
+                })
+                setProductosFirebase(Productos)
+            })
+        }
+
+        getProducts()
+
+    },[])
+        
 
     //Filtrado de Hamburguesas
 
-    const Hamburguesas= productos.filter((el)=>
+    const Hamburguesas= productosFirebase.filter((el)=>
     el.Categoria==="Hamburguesa"
     )
 
     //Filtrado de papas
 
-    const Papas= productos.filter((el)=>
+    const Papas= productosFirebase.filter((el)=>
     el.Categoria==="Papas"
     )
 
@@ -51,7 +70,7 @@ function ItemListContainer() {
         </div>
         <div>{ 
                 categoria === undefined ? (
-                <ItemList ItemProductos={productos}/>
+                <ItemList ItemProductos={productosFirebase}/>
             ):("")
                 }
         </div>
