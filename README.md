@@ -16,4 +16,8 @@ En el caso que hayamos elegido un producto, el Cart contendrá este producto con
 
 Una vez que estemos seguro de las compras podremos rellenar un formulario con un nombre, mail y teléfono el cual nos devolverá un numero de pedido autogenerado.
 
+Video mostrando la aplicación:
+
+https://drive.google.com/file/d/1o4NSEy1pOGzPGKd2sk47ZNxcTLgOgvfC/view?usp=sharing
+
 Muchas Gracias por ver mi proyecto.
