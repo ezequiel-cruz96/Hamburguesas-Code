@@ -80,7 +80,6 @@ export default function ItemCount ({stock,inicial,Onadd,id,Producto,Descripcion,
                     {
                         Onadd>0 ?(
                             <button type="button" className="btn btn-primary" onClick= {onClick}>Comprar</button>
-
                         )
                         : ("") 
                     }

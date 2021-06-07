@@ -1,5 +1,10 @@
+
+body,html{
+    width: 100%;
+    height: 100%;
+}
 .Imagen__logo{
-    width: 300px;
+    width: 348px;
     height: 200px;
 }
 
@@ -14,11 +19,105 @@
     border: solid grey 1px;
 }
 .Contenedor{
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 100px;
 }
 
 .tacho{
+    margin-left: 200px;
     color:red;
+    
 }
+.btn1{
+    color: #fff;
+    background-color: red;    
+    border-color: red;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: 1200px;
+    margin-top: 5px;
+}
+.btn2{
+    color: #fff;
+    background-color: #0d6efd;;    
+    border-color: #0d6efd;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: 5px;
+}
+.titulo{
+    margin-left: -100px;
+}
+.btn3{
+    color: #fff;
+    background-color: #0d6efd;;    
+    border-color: #0d6efd;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-left: 350px;
+}
+
+.formulario{
+    width: 300px;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+.bt4{
+    margin-top: 2px;
+    margin-left: 80px;
+    margin-bottom: 10px;
+    color: #fff;
+    background-color: #0d6efd;;    
+    border-color: #0d6efd;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.btn5{
+    margin-left: 1400px;
+    margin-top: 5px;
+    color: #fff;
+    background-color: #0d6efd;;    
+    border-color: #0d6efd;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+form{
+    margin-left: 10px;
+}
+h3{
+    margin-top: 5px;
+ }
+
+ .btn6{
+    orientation: absolute;
+    margin-left: 10px;
+    color: #fff;
+    background-color: orange;;    
+    border-color: orange;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+ }
+
+ 

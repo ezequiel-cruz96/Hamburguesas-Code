@@ -5,6 +5,9 @@ import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import AppContextProvider from './context/CartContext';
 import Cart from './components/Cart';
+import Homepage from './components/Homepage/homepage';
+import Contactpage from'./components/ContactPage/contactpage';
+import Infopage from './components/InfoPage/infopage';
 
 function App() {
   return (
@@ -12,10 +15,16 @@ function App() {
       <AppContextProvider>
       <BrowserRouter>
       <NavBar/>
-      <h1>Bienvenidos a Burger Code</h1>
-      <h2>En la sección Catálogo encontras nuestros productos</h2>
-        <Switch>
-        
+        <Switch> 
+        <Route exact path="/">
+          <Homepage/>
+          </Route>
+          <Route exact path="/Contacto">
+          <Contactpage/>
+          </Route>
+          <Route exact path="/quienesSomos">
+          <Infopage/> 
+          </Route>
           <Route exact path="/catalogo/:categoria">
           <ItemListContainer/>
           </Route>

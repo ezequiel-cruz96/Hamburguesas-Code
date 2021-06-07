@@ -10,11 +10,11 @@ function NavBar() {
     return(
         <div>
             <div className="barraNavegacion__logo">
-             <Link to={"/"}> <img src={logo}  className="logo--tamaño"/></Link>      
+             <Link to={"/"}> <img src={logo}  className="logo--tamaño"/></Link>   
             </div>
             <div>
                 <div className="barraNavegacion__items">
-                    <div className="barraNavegacion__item"><Link to={'/Inicio'} className="estilosLink">Inicio</Link></div>
+                    <div className="barraNavegacion__item"><Link to={'/'} className="estilosLink">Inicio</Link></div>
                     <div className="barraNavegacion__item"><Link to={'/quienesSomos'} className="estilosLink">¿Quienés somos?</Link></div>
                     <div>
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" className="barraNavegacion__item--drop" >
